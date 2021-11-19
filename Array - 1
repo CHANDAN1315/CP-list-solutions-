@@ -40,3 +40,64 @@ hint :- Traverse the array. While traversing, use the absolute value of every el
             }
       }
  };
+
+4th Best 
+hint  :- use the xor property and deep understanding of xor operations
+
+void solve() {
+
+    int a[6] = {4, 3, 6, 2, 1, 1};
+    //we have to find the missing and the repeating number in the array
+
+    int x = 0, y = 0;
+    fr(i, 0, 5) {
+        x = x ^ a[i];
+    }
+    fr(i, 1, 6) {
+        y = y ^ i;
+    }
+    int num = x ^ y;
+
+    vi k, m;
+    int set_bit = num & ~(num - 1);
+
+    fr(i, 1, 6) {
+        if (set_bit & i) { // do not use the comparision with (set_bit & i  != 0 )
+                            // it will give wrong ans
+            k.pb(i);
+        }
+        else m.pb(i);
+    }
+
+    fr(i, 0, 5) {
+        if (set_bit & a[i]) {
+            k.pb(a[i]);
+        }
+        else m.pb(a[i]);
+    }
+    int l = 0, n = 0;
+    fr(i, 0, k.size() - 1) {
+        l = l ^ k[i];
+    }
+
+    fr(i, 0, m.size() - 1) {
+        n = n ^ m[i];
+    }
+    // cout <<n<<" "<<l;
+    bool f =0;
+    fr(i,0,5){
+        // bool f =0;
+        if(n == a[i]){
+            f=1;
+        } // n is repeating and the other is  missing  
+
+    }
+    if(f){
+        cout << "repeating no is " <<n<<endl;
+        cout <<"non repeating no is "<<l<<endl;
+    }
+    else {
+        cout << "repeating no is " <<l<<endl;
+        cout <<"non repeating no is "<<n<<endl;        
+    }
+}
