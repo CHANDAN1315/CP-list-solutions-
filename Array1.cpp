@@ -1,26 +1,26 @@
-Que :- Repeat and Missing Number
+// Que :- Repeat and Missing Number
 
-https://www.youtube.com/watch?v=5nMGY4VUoRY&list=PLgUwDviBIf0rPG3Ictpu74
-YWBQ1CaBkm2&index=3 
+// https://www.youtube.com/watch?v=5nMGY4VUoRY&list=PLgUwDviBIf0rPG3Ictpu74
+// YWBQ1CaBkm2&index=3 
 
-Solution :
+// Solution :
 
-1st Brute
-hint :- short the array and use index to find the missing element (simple brute force)
-Time -> O(nlogn) , Space -> O(1)
+// 1st Brute
+// hint :- short the array and use index to find the missing element (simple brute force)
+// Time -> O(nlogn) , Space -> O(1)
 
-2nd Better
-hint :- using extra space and in O(n) time 
-        use hash table and mark the element that occur once as (1) and if the element occur again (repeating) then output that 
-        and in secound travel check the unmarked element and output that as not occuring element .
-Time -> O(n) , space -> O(n) 
+// 2nd Better
+// hint :- using extra space and in O(n) time 
+//         use hash table and mark the element that occur once as (1) and if the element occur again (repeating) then output that 
+//         and in secound travel check the unmarked element and output that as not occuring element .
+// Time -> O(n) , space -> O(n) 
 
-3rd Best
-hint :- Traverse the array. While traversing, use the absolute value of every element as an index and make the value at this 
-        index as negative to mark it visited. If something is already marked negative then this is the repeating element.
-        To find missing, traverse the array again and look for a positive value.
+// 3rd Best
+// hint :- Traverse the array. While traversing, use the absolute value of every element as an index and make the value at this 
+//         index as negative to mark it visited. If something is already marked negative then this is the repeating element.
+//         To find missing, traverse the array again and look for a positive value.
         
- Code :-
+//  Code :-
  class solution {
  public :
       void print_two_element(int arr[] ,  int size){
@@ -41,8 +41,8 @@ hint :- Traverse the array. While traversing, use the absolute value of every el
       }
  };
 
-4th Best 
-hint  :- use the xor property and deep understanding of xor operations
+// 4th Best 
+// hint  :- use the xor property and deep understanding of xor operations
 
 void solve() {
 
